@@ -1,0 +1,480 @@
+<div data-ride="carousel" class="carousel slide" id="home-v1-header-carousel">
+    {{!-- <!-- Carousel slides --> --}}
+    <div class="carousel-inner">
+        <div class="item active">
+            <figure>
+                <img alt="Home Slide" src="/images/header-slider/home-v1/header-slide.jpg" />
+            </figure>
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>Artificial Intelligence</h3>
+                    <h2>Unveiling the Intelligence of Machines</h2>
+                    <p>
+                        The question of whether a computer can think is no more interesting than the question of whether
+                        a submarine can swim."
+                        - Edsger W. Dijkstra
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img alt="Home Slide" src="/images/header-slider/home-v1/header-slide1.jpg" />
+            </figure>
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>Software Engineering</h3>
+                    <h2>Building the Foundations of Digital Innovation</h2>
+                    <p>
+                        Good software, like wine, takes time." - Joel Spolsky
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img alt="Home Slide" src="/images/header-slider/home-v1/header-slide2.jpg" />
+            </figure>
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>Quantum Computing</h3>
+                    <h2>Unraveling the Power of Quantum Mechanics in Computing</h2>
+                    <p>
+                        Nature isn't classical, dammit, and if you want to make a simulation of nature, you'd better
+                        make it quantum
+                        mechanical." - Richard Feynman
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- <!-- Controls --> --}}
+    <a class="left carousel-control" href="#" data-slide="prev"></a>
+    <a class="right carousel-control" href="#" data-slide="next"></a>
+</div>
+<!-- End: Slider Section -->
+
+<!-- Start: Search Section -->
+<section class="search-filters">
+    <div class="container">
+        <div class="filter-box">
+            <h3>What are you looking for at the library?</h3>
+            <form action="/search" method="get">
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label class="sr-only" for="keywords">Search by Keyword</label>
+                        <input class="form-control" placeholder="Search by Keyword" id="keywords" name="keywords"
+                            type="text" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="form-group">
+                        <select name="specialization" id="catalog" class="form-control">
+                            <option selected>All Specialization</option>
+                            <option>Artificial Intelligence (AI)</option>
+                            <option>Algorithms and Data Structures</option>
+                            <option>Computer Architecture</option>
+                            <option>Computer Graphics</option>
+                            <option>Cybersecurity</option>
+                            <option>Database Systems</option>
+                            <option>Machine Learning</option>
+                            <option>Mobile App Development</option>
+                            <option>Networks</option>
+                            <option>Operating Systems</option>
+                            <option>Robotics</option>
+                            <option>Software Engineering</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="form-group">
+                        <input class="form-control" type="submit" value="Search" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- End: Search Section -->
+
+
+<!-- Start: Category Filter -->
+<section class="category-filter section-padding">
+    <div class="container">
+        <div class="center-content">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2 class="section-title">Check Out The New Releases</h2>
+                    <span class="underline center"></span>
+                    <p class="lead">
+                        The new releases currently published on our platform in different specialization of computer
+                        science.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="filter-buttons">
+            <div class="filter btn" data-filter="all">All Releases</div>
+            {{!-- <div class="filter btn" data-filter=".Artificial Intelligence (AI)">
+                Artificial Intelligence (AI)
+            </div>
+            <div class="filter btn" data-filter=".Algorithms and Data Structures">
+                Algorithms and Data Structures
+            </div>
+            <div class="filter btn" data-filter=".video">
+                Computer Architecture
+            </div>
+            <div class="filter btn" data-filter=".audio">Computer Graphics</div>
+            <div class="filter btn" data-filter=".books">Cybersecurity</div>
+            <div class="filter btn" data-filter=".magazines">
+                Database Systems
+            </div>
+            <div class="filter btn" data-filter=".Machine Learning">
+                Machine Learning
+            </div>
+            <div class="filter btn" data-filter=".audio">
+                Mobile App Development
+            </div>
+            <div class="filter btn" data-filter=".books">Networks</div>
+            <div class="filter btn" data-filter=".magazines">
+                Operating Systems
+            </div>
+            <div class="filter btn" data-filter=".audio">Robotics</div>
+            <div class="filter btn" data-filter=".books">
+                Software Engineering
+            </div> --}}
+        </div>
+    </div>
+
+    <div id="category-filter">
+        <ul class="category-list" style="display: flex; flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;">
+            {{#if books.length}}
+                {{#each books}}
+                    <li class="category-item" style="flex-basis: 21%;">
+                        <figure style="height:410px;">
+                            <img src="/{{coverimage}}" alt="{{booktitle}}" />
+                            <figcaption class="bg-orange">
+                                <div class="info-block">
+                                    <h4>{{booktitle}}</h4>
+                                    <span class="author"><strong>Author:</strong> {{author}}</span>
+                                    <span class="author"><strong>ISBN:</strong> {{isbn}}</span>
+                                    <div class="rating">
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                    </div>
+                                    <p>
+                                        {{summary}}
+                                    </p>
+                                    <a href="/book/{{_id}}">Read More <i class="fa fa-long-arrow-right"></i></a>
+
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </li>
+                {{/each}}
+            {{else}}
+                <h4>No book published for {{booksp}} specialization</h4> <br> <br> <br>
+
+            {{/if}}
+        </ul>
+        <div class="center-content">
+            <a href="/books" class="btn btn-primary">View More</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+</section>
+<!-- Start: Category Filter -->
+
+<!-- Start: Features -->
+<section class="features">
+    <div class="container">
+        <div class="center-content">
+            <h2 class="section-title">Specialization</h2>
+            <span class="underline center"></span>
+            <p class="lead">
+                The various specialization in computer science we have in our
+                library.
+            </p>
+        </div>
+        <ul>
+            <li class="bg-yellow">
+                <div class="feature-box">
+                    <i class="yellow"></i>
+                    <h3>Artificial Intelligence (AI)</h3>
+                    <p>Creating intelligent machines and systems.</p>
+                    <a class="yellow" href="/authspec?specialization=Artificial%20Intelligence%20(AI)">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-light-green">
+                <div class="feature-box">
+                    <i class="light-green"></i>
+                    <h3>Algorithms and Data Structures</h3>
+                    <p>Efficient problem-solving techniques and data organization.</p>
+                    <a class="light-green" href="/authspec?specialization=Algorithms%20and%20Data%20Structures">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-blue">
+                <div class="feature-box">
+                    <i class="blue"></i>
+                    <h3>Computer Architecture</h3>
+                    <p>Designing and organizing computer systems.</p>
+                    <a class="blue" href="/authspec?specialization=Computer%20Architecture">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-red">
+                <div class="feature-box">
+                    <i class="red"></i>
+                    <h3>Computer Graphics</h3>
+                    <p>Creating visual images and animations.</p>
+                    <a class="red" href="/authspec?specialization=Computer%20Graphics">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-violet">
+                <div class="feature-box">
+                    <i class="violet"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>Protecting computer systems and networks from threats.</p>
+                    <a class="violet" href="/authspec?specialization=Cybersecurity">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-green">
+                <div class="feature-box">
+                    <i class="green"></i>
+                    <h3>Database Systems</h3>
+                    <p>Storing, managing, and retrieving structured data.</p>
+                    <a class="green" href="/authspec?specialization=Database%20Systems">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-yellow">
+                <div class="feature-box">
+                    <i class="yellow"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Developing algorithms that improve with experience.</p>
+                    <a class="yellow" href="/authspec?specialization=Machine%20Learning">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-light-green">
+                <div class="feature-box">
+                    <i class="light-green"></i>
+                    <h3>Mobile App Development</h3>
+                    <p>Creating software applications for mobile devices.</p>
+                    <a class="light-green" href="/authspec?specialization=Mobile%20App%20Development">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-blue">
+                <div class="feature-box">
+                    <i class="blue"></i>
+                    <h3>Networks</h3>
+                    <p>Designing and managing computer communication systems.</p>
+                    <a class="blue" href="/authspec?specialization=Networks">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-red">
+                <div class="feature-box">
+                    <i class="red"></i>
+                    <h3>Operating Systems</h3>
+                    <p>Core software for computer hardware management.</p>
+                    <a class="red" href="/authspec?specialization=Operating%20Systems">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-violet">
+                <div class="feature-box">
+                    <i class="violet"></i>
+                    <h3>Robotics</h3>
+                    <p>Designing and operating autonomous mechanical systems.</p>
+                    <a class="violet" href="/authspec?specialization=Robotics">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="bg-green">
+                <div class="feature-box">
+                    <i class="green"></i>
+                    <h3>Software Engineering</h3>
+                    <p>Designing, developing, and maintaining software systems.</p>
+                    <a class="green" href="/authspec?specialization=Software%20Engineering">
+                        View Selection <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- End: Features -->
+
+<!-- Start: Newsletter -->
+<section class="newsletter section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="center-content">
+                    <h2 class="section-title">Subscribe to our Newsletters</h2>
+                    <span class="underline center"></span>
+                    <p class="lead">
+                        Subscribe to our newsletter to get notified on our latest releases.
+                    </p>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Enter your Email!" id="newsletter" name="newsletter"
+                        type="email" />
+                    <input class="form-control" value="Subscribe" type="submit" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End: Newsletter -->
+
+<!-- Start: Meet Staff -->
+<section class="team section-padding">
+    <div class="container">
+        <div class="center-content">
+            <h2 class="section-title">Meet Our Staff</h2>
+            <span class="underline center"></span>
+            <p class="lead">
+                Meet the staff heading the computer science digital library.
+            </p>
+        </div>
+        <div class="team-list">
+            <div class="team-member">
+                <figure>
+                    <img src="/images/default-profile.png" alt="team" />
+                </figure>
+                <div class="content-block">
+                    <div class="member-info">
+                        <h4>Dr. Mrs. Secretary Name</h4>
+                        <span class="designation">Secretary</span>
+                        <ul class="social">
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-skype"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <p>Short description for Secretary.</p>
+                        <a class="btn btn-primary" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <figure>
+                    <img src="/images/default-profile.png" alt="team" />
+                </figure>
+                <div class="content-block">
+                    <div class="member-info">
+                        <h4>Professor Bakpo</h4>
+                        <span class="designation">Head of Department</span>
+                        <ul class="social">
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-skype"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <p>
+                            The head of department of computer science Dr. Mr. HOD Name
+                            and some short description.
+                        </p>
+                        <a class="btn btn-primary" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <figure>
+                    <img src="/images/default-profile.png" alt="team" />
+                </figure>
+                <div class="content-block">
+                    <div class="member-info">
+                        <h4> Mrs Asogwa Caroline</h4>
+                        <span class="designation">Librarian</span>
+                        <ul class="social">
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-skype"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <p>
+                            The librarian is incharge of all administrative duties in the library. Meet him for your
+                            enquiries.
+                        </p>
+                        <a class="btn btn-primary" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{!-- <!-- End: Meet Staff --> --}}

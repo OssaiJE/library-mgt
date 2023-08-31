@@ -1,0 +1,128 @@
+<!-- Start: Page Banner -->
+<section class="page-banner services-banner">
+    <div class="container">
+        <div class="banner-header">
+            <h2>Publish a Book</h2>
+            <span class="underline center"></span>
+            <p class="lead">Publish or update your published book.</p>
+        </div>
+        <div class="breadcrumb">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>Publish</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End: Page Banner -->
+
+<!-- Start: Publish Section -->
+<section class="search-filters">
+    <div class="container">
+        <div class="filter-box">
+            <h3>Publish your book on our digital library.</h3>
+            <form action="/publish" method="post" enctype="multipart/form-data">
+                <div class="col-md-8 col-sm-6">
+                    <div class="form-group">
+                        <label for="keywords">Book Title:</label>
+                        <input class="form-control" placeholder="Book Title" id="keywords" name="booktitle"
+                            type="text" required />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="form-group">
+                        <label for="keywords">Author:</label>
+                        <input class="form-control" placeholder="Author" id="keywords" name="author" type="text" required/>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="form-group">
+                        <label for="keywords">Specialization:</label>
+                        <select name="specialization" id="catalog" class="form-control">
+                            <option selected>Artificial Intelligence (AI)</option>
+                            <option>Algorithms and Data Structures</option>
+                            <option>Computer Architecture</option>
+                            <option>Computer Graphics</option>
+                            <option>Cybersecurity</option>
+                            <option>Database Systems</option>
+                            <option>Machine Learning</option>
+                            <option>Mobile App Development</option>
+                            <option>Networks</option>
+                            <option>Operating Systems</option>
+                            <option>Robotics</option>
+                            <option>Software Engineering</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="form-group">
+                        <label for="keywords">ISBN:</label>
+                        <input class="form-control" placeholder="ISBN" id="keywords" name="isbn" type="text" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="form-group">
+                        <label for="keywords">Year published:</label>
+                        <input class="form-control" placeholder="Year published" id="keywords" name="year"
+                            type="text" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="form-group">
+                        <label for="keywords">Publisher:</label>
+                        <input class="form-control" placeholder="Publisher" id="keywords" name="publisher"
+                            type="text" />
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="form-group">
+                        <label for="keywords">Select Book:</label>
+                        <input class="form-control" type="file" placeholder="book" id="keywords" name="book"
+                            accept=".pdf,.docx,.doc,.txt" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="form-group">
+                        <label for="keywords">Add Cover Image:</label>
+                        <input class="form-control" type="file" placeholder="cover" id="keywords" name="coverimage"
+                            accept=".jpg,.jpeg,.png" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="description">Enter summary:</label>
+                        <textarea class="form-control" id="description" name="summary"
+                            placeholder="Maximum of 130 characters." rows="3" cols="50" maxlength="130"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="form-group">
+                        <label for="description">Book Availability:</label>
+                        <select name="availability" id="category" class="form-control">
+                            <option value="digital" selected>Digital</option>
+                            <option value="physical">Physical Library</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="form-group">
+                        <label for="description">Book Status:</label>
+                        <select name="status" id="category" class="form-control">
+                            <option value="public" selected>Public</option>
+                            <option value="private">private</option>
+                            <option value="draft">Draft</option>
+                        </select>
+                    </div>
+                </div>
+                &nbsp;&nbsp;&nbsp;
+                <div class="col-md-2 col-sm-6">
+                    <div class="form-group">
+                        <input class="form-control" type="submit" value="Publish" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- End: Publish Section -->

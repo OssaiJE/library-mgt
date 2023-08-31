@@ -1,0 +1,22 @@
+<ul>
+    {{#each errors}}
+        <li class="alert alert-warning" role="alert">{{ this.msg }}</li>
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each success_msg}}
+        <li class="alert alert-success" role="alert">{{ this }}</li>
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each error_msg}}
+        <li class="alert alert-warning" role="alert">{{ this }}</li>
+    {{/each}}
+</ul>
+<ul>
+    {{#each error}}
+        <li class="alert alert-warning" role="alert">{{ this }}</li>
+    {{/each}}
+</ul>

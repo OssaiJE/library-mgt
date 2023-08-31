@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Kingthings_Petrock_light
+font link: http://www.kingthingsfonts.co.uk/fonts/fonts.htm
+font author: Kingthings
+font author site: http://www.kingthingsfonts.co.uk/
+
+
+icon designer: Geoff R
+icon designer link: /Foomandoonian
+        
+{"bg":"transparent","icon-gradient-0":"#21690F","icon-gradient-1":"#88C848","font":"#000000","slogan":"#141414"}
+      
